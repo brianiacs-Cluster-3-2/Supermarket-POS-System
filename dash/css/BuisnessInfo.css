@@ -1,0 +1,39 @@
+
+.Buisness_info {
+
+        justify-content: center;
+
+        padding-left: 30%;
+        
+        }
+
+.form_control{
+    border-color:aqua;
+    border-width: 2px;
+}
+
+label{
+    color: white;
+}
+
+.lab{
+padding-bottom: 3%;
+}
+
+#intborder{
+
+    border-color: #f39c12;
+    margin-bottom: 0.80%;
+}
+
+.sidebar .navbar .navbar-nav .nav-link:hover,
+.sidebar .navbar .navbar-nav .nav-link.active {
+    color: #f39c12;
+    /* background: var(--dark); */
+    border-color: #f39c12;
+}
+
+
+
+
+ 
