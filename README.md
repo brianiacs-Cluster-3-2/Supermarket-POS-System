@@ -3,3 +3,4 @@ Supermarket grocery POS systems are point-of-sale software and hardware tools th
 
 
 ## this is the new line added
+this is the new line added
