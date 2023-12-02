@@ -59,7 +59,7 @@ if(isset($_POST['username']) && isset($_POST['username']) && isset($_POST['role'
 
 }else{
     header("Location: Login.php");
-    // exit();
+    exit();
 }
 
 ?>
