@@ -10,6 +10,7 @@ if(isset($_POST['username']) && isset($_POST['username']) && isset($_POST['role'
         return $data;
     }
 
+    // hjsd
     $role = validate ($_POST['role']);
     $username = validate ($_POST['username']);
     $password = validate($_POST['password']);
