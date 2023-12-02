@@ -1,3 +1,5 @@
+<!-- Updated by Nuha -->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,14 +22,14 @@
 
 </head>
 
-<body style="">
+<body >
 
 
 	<div style="
-		margin-left:7px;
-		margin-top:7px;
+		margin-left:2%;
+		margin-top:2%;
 		">
-		<img width="55px" height="55px" src="../Project/images/logo.png" alt="Logo">
+		<img width="55px" height="55px" src="./images/logo.png" alt="Logo">
 	</div>
 
 
