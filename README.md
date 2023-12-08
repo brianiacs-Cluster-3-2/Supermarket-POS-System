@@ -42,4 +42,5 @@ online POS system can vary depending on the specific needs of the business and t
 industry it operates, but some key components to consider include:
 
 
+![1 B](https://github.com/brianiacs-Cluster-3-2/Supermarket-POS-System/assets/90097439/5dd87e65-c345-4f90-8e52-c367062d0023)
 
