@@ -1,88 +1,3 @@
-<?php
-session_start();
-
-if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
-    
-
-    ?>
-
-
-    <!DOCTYPE html>
-    <html lang="en">
-
-    <head>
-        <meta charset="utf-8">
-        <link href="./images/logo.png" rel="shortcut icon">
-        <title>Dashboard</title>
-        <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <meta content="" name="keywords">
-        <meta content="" name="description">
-
-        <!-- Favicon -->
-        <link href="img/favicon.ico" rel="icon">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-            integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-            crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-
-        <!-- Google Web Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500;700&display=swap"
-            rel="stylesheet">
-
-        <!-- Icon Font Stylesheet -->
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-
-
-        <!-- Libraries Stylesheet -->
-        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-        <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
-
-        <!-- Customized Bootstrap Stylesheet -->
-        <link href="./src/css/bootstrap.min.css" rel="stylesheet">
-
-        <!-- Template Stylesheet -->
-        <link rel="stylesheet" href="./src/css/style.css">
-        <link rel="stylesheet" href="./src/css/BuisnessInfo.css">
-
-    </head>
-
-    <style>
-        #akt:hover {
-            color: #f39c12;
-        }
-
-        .sidebar .navbar .navbar-nav .nav-link:hover,
-        .sidebar .navbar .navbar-nav .nav-link.active {
-            color: #f39c12;
-            /* background: var(--dark); */
-            border-color: #f39c12;
-        }
-
-        .swal-button {
-            padding: 7px 19px;
-            border-radius: 2px;
-
-            font-size: 12px;
-            border: 0.5px #f39c12;
-            border-color: #f39c12;
-
-        }
-
-        .p {
-            color: #AEAEAE;
-            font-size: 10px;
-            text-align: right;
-            margin-top: -82.5px;
-        }
-    </style>
-
-    <body>
-
-        <?php
-        if ($_SESSION['role'] == 'Admin') { ?>
 
             <!-- Emplyee Start Gate  -->
             <div class="container-fluid position-relative d-flex p-0">
@@ -129,7 +44,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
                                     <a href="./src/Sales_display.php" class="dropdown-item">Sales History</a>
                                 </div>
                             </div>
-                            <div class="nav-item dropdown">
+                            <!-- <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i
                                         class="fa fa-truck me-2"></i> Purchase</a>
                                 <div class="dropdown-menu bg-transparent border-0">
@@ -146,7 +61,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
                                     <a href="./src/pro_Display.php" class="dropdown-item">Products List Future</a>
                                     <a href="./src/Search_pro.php" class="dropdown-item">Search Products</a>
                                 </div>
-                            </div>
+                            </div> -->
                             <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i
                                         class="fa fa-users me-2"></i>Customers</a>
@@ -155,20 +70,20 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
                                     <a href="./src/Cus_Display.php" class="dropdown-item">Customer List</a>
                                 </div>
                             </div>
-                            <div class="nav-item dropdown">
+                            <!-- <div class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i
                                         class="fa fa-address-book me-2"></i>Supplier</a>
                                 <div class="dropdown-menu bg-transparent border-0">
                                     <a href="./src/Supplier.php" class="dropdown-item">Create Supplier</a>
                                     <a href="./src/Sup_Display.php" class="dropdown-item">Supplier List</a>
                                 </div>
-                            </div>
+                            </div> -->
 
                             <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i
                                         class="fa fa-cogs me-2"></i>Setting</a>
                                 <div class="dropdown-menu bg-transparent border-0">
-                                    <a href="./src/BusinessInfo.php" class="dropdown-item">Business Info</a>
+                                    <!-- <a href="./src/BusinessInfo.php" class="dropdown-item">Business Info</a> -->
                                     <a href="logout.php" class="dropdown-item">Log Out</a>
                                 </div>
                             </div>
@@ -494,24 +409,3 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
                 <!-- Template Javascript -->
                 <script src="./src/js/main.js"></script>
 
-
-        <!--Employee Login  -->
-                <?php
-        } else if ($_SESSION['role'] === 'Employee') {
-            include("./src/Employee/home.php");
-        }
-        ?>
-
-            <!-- Emplyee End Gate -->
-    </body>
-
-    </html>
-
-    <?php
-
-} else {
-    header("Location: Login.php");
-    exit();
-}
-
-?>
