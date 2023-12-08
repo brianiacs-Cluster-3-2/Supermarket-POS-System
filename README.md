@@ -1,4 +1,4 @@
-![15 B](https://github.com/brianiacs-Cluster-3-2/Supermarket-POS-System/assets/90097439/dfe41d13-2ac2-4858-ba36-94ee37723cb1)# Supermarket-POS-System
+## Supermarket-POS-System
 We are creating Point of Sales System version 1.0, a commercial service that leverages a 
 client’s existing Point of Sales (POS) system to create, update, and maintain an online store. 
 Our POS system establishes a connection between a local POS and a cloud-based web service. 
