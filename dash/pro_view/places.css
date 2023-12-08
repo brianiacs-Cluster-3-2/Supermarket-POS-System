@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.logo {
+
+    cursor: pointer;
+}
+
+/* body{
+    width: 100%;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: rgb(43, 36, 58);
+} */
+
+
+.btnN {
+    display: inline-block;
+    /* margin-top: .3rem; */
+    background: #ffa500;
+    color: #fff;
+    padding: .8rem 3rem;
+    border: .2rem solid #ffa500;
+    height: 60px;
+    cursor: pointer;
+    font-size: 1.3rem;
+    text-decoration: none;
+}
+
+.btnN:hover {
+    background: rgba(255, 165, 0, .2);
+    color: #ffa500;
+
+}
+
+
+
+.gallery .box-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+
+
+}
+
+.box-container .box {
+    overflow: hidden;
+    box-shadow: 0.1rem 2rem rgba(0, 0, 0, .1);
+    border: 0.4rem solid #776030;
+    border-radius: .5rem;
+    flex: 1 1 360px;
+    height: 350px;
+    position: relative;
+    text-align: center;
+
+
+
+}
+
+.box img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+
+}
+
+.box-content {
+    position: absolute;
+    top: -130%;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    background: rgba(0, 0, 0, .7);
+    padding-top: 20px;
+
+
+}
+
+.box:hover .box-content {
+    top: 0%;
+    transition: all .3s linear;
+
+}
+
+
+.box-content h3 {
+    font-size: 2.5rem;
+    color: orange;
+}
+
+.box-content p {
+    font-size: 1rem;
+    color: #eee;
+    padding: .50rem;
+    text-align: -50%;
+}
+
+.galheading {
+    text-align: center;
+    padding: 2.5rem;
+
+}
+
+.galheading span {
+    font-size: 3.5rem;
+    background: rgba(255, 165, 0, .2);
+    color: #ffa500;
+    border-radius: .5rem;
+    padding: .2rem 1rem;
+    display: inline-block;
+
+}

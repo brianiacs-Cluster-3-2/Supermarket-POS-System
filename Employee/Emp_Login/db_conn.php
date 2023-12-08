@@ -1,15 +1,16 @@
 <?php
-// database connection
 
     $host = "localhost";
     $user = "root";
     $pass =  "";
-    $db = "brainiacs pos";
+    $db = "login";
 
     $conn =  mysqli_connect($host, $user,$pass, $db,3308);
 
     if (!$conn) {
-       echo "Connection fail";
+       echo "Connectin fail";
     }
-
+    // else{
+    //     echo "pass";
+    // }
 ?>

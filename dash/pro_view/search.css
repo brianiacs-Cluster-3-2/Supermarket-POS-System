@@ -1,0 +1,64 @@
+aligncent{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+.Scontainer{
+    width: 60px;
+    height: 60px;
+    background-color: #ffa500;
+    position: relative;
+    border-radius: 50px;
+    transition: 0.5s;
+    overflow: hidden;
+    cursor: pointer;
+
+}
+.Scontainer .Sicon{
+    position:absolute;
+    left:30px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    
+}
+
+.Scontainer .Sicon .search{
+    font-size: 21px;
+    cursor: pointer;
+    color: #444;
+}
+
+.Scontainer.active{
+    width: 900px;
+}
+
+.Scontainer .Sinput{
+    position: relative;
+    width: 800px;
+    height: 60px;
+    left: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+}
+
+.Scontainer .Sinput input{ 
+position:absolute;
+border: none;
+width: 100%;
+height: 100%;
+font-size: 18px;
+outline: none;
+background-color: #ffa500;
+}
+
+.Scontainer .Sinput .clear{
+    position:absolute;
+    right: -25px;
+    top:50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    font-size: 20px;
+    color: #8888;
+}
