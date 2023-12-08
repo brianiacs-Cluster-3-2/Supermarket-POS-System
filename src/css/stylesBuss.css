@@ -1,0 +1,58 @@
+
+.Buisness_info {
+    display: flex;
+    justify-content: center;
+    /* width: 800px */
+}
+
+
+.form_control{
+    border-color:aqua;
+    border-width: 2px;
+}
+
+label{
+    color: white;
+}
+
+#lab{
+padding-bottom: 20px;
+}
+
+
+#intborder{
+
+    border-color: #f39c12;
+    margin-bottom: 0.80%;
+}
+
+.form{
+    width: 500px;
+}
+select {
+	width: 100%;
+	padding: 10px;
+	border-radius: 5px;
+	border: 1px solid #f39c12;
+	transition: border-color 0.3s ease;
+    margin-bottom: 15px;
+    background-color: rgb(42, 42, 42);
+    color: white;
+}
+
+select:focus {
+	border-color:1px solid #f39c12;
+	outline: none;
+}
+
+.sidebar .navbar .navbar-nav .nav-link:hover,
+.sidebar .navbar .navbar-nav .nav-link.active {
+    color: #f39c12;
+    /* background: var(--dark); */
+    border-color: #f39c12;
+}
+
+
+
+
+ 
