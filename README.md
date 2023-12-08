@@ -43,48 +43,63 @@ industry it operates, but some key components to consider include:
 
 
 ## INTERFACES OF OUR SYSTEM 
+
 **Login Page**
 ![Login Page](https://github.com/brianiacs-Cluster-3-2/Supermarket-POS-System/assets/90097439/39e5b036-9236-4b8e-97d2-30861c4eacbf)
+
 
 **Admin Dashboard Pag**
 ![Admin Dashborad](https://github.com/brianiacs-Cluster-3-2/Supermarket-POS-System/assets/90097439/5dd87e65-c345-4f90-8e52-c367062d0023)
 
+
 **Business Information Page**
 ![Business Information Page](https://github.com/brianiacs-Cluster-3-2/Supermarket-POS-System/assets/90097439/24127465-927f-4344-bf55-7eba62f0a676)
+
 
 **Create Supplier Page**
 ![Create Supplier Page](https://github.com/brianiacs-Cluster-3-2/Supermarket-POS-System/assets/90097439/f622ae04-735a-4941-9d3a-84977a183932)
 
+
 **Customer List Page**
 ![Customer List Page](https://github.com/brianiacs-Cluster-3-2/Supermarket-POS-System/assets/90097439/9bb6791d-b291-4539-a84a-04a956d22ef6)
+
 
 **Create Customer Page**
 ![Create Customer Page](https://github.com/brianiacs-Cluster-3-2/Supermarket-POS-System/assets/90097439/9ded4662-b229-4575-88b1-d7c3b5c01545)
 
+
 **Customer List Page**
 ![Customer List Page](https://github.com/brianiacs-Cluster-3-2/Supermarket-POS-System/assets/90097439/da5b2e14-e823-4655-b72c-5100298608b1)
+
 
 **Update Customer Page**
 ![Update Customer Page](https://github.com/brianiacs-Cluster-3-2/Supermarket-POS-System/assets/90097439/87292c4a-7feb-4d6e-9884-11bcd56c10f0)
 
+
 **Create Product Page**
 ![Create Product Page](https://github.com/brianiacs-Cluster-3-2/Supermarket-POS-System/assets/90097439/7a35e0eb-326b-4ac0-9d20-77245fbcdc6e)
+
 
 **Supplier List Page**
 ![Supplier List Page](https://github.com/brianiacs-Cluster-3-2/Supermarket-POS-System/assets/90097439/0074e238-b2ac-4210-bbef-ecf8d3ae86e0)
 
+
 **Purchase Order Page**
 ![Purchase Order Page](https://github.com/brianiacs-Cluster-3-2/Supermarket-POS-System/assets/90097439/07c5320d-6afa-479e-80f5-df30264bf907)
+
 
 **Purchase List Page**
 ![Purchase List Page](https://github.com/brianiacs-Cluster-3-2/Supermarket-POS-System/assets/90097439/67513ab4-5df1-4657-a4d7-db8d01d3d89a)
 
+
 **Sales Order Page**
 ![Sales Order Page](https://github.com/brianiacs-Cluster-3-2/Supermarket-POS-System/assets/90097439/e6cfbbcf-f45a-41ea-917f-c6f3923e70b0)
+
 
 **Sales List Page**
 ![Sales List Page](https://github.com/brianiacs-Cluster-3-2/Supermarket-POS-System/assets/90097439/b55ee9cf-c2d4-4f9a-b638-c816018a1a73)
 
+
 **Employee View Page**
 ![Employee View Page](https://github.com/brianiacs-Cluster-3-2/Supermarket-POS-System/assets/90097439/aa828a0b-1384-4bf1-b541-c02cac0f9f1e)
-**
+
