@@ -1,5 +1,3 @@
-<!-- Updated by Nuha -->
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,19 +15,20 @@
 	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet"
 		integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
+<--external css -->
 	<link rel="stylesheet" href="./css/styles.css">
 
 
 </head>
 
-<body >
+<body style="">
 
 
 	<div style="
-		margin-left:2%;
-		margin-top:2%;
+		margin-left:7px;
+		margin-top:7px;
 		">
-		<img width="55px" height="55px" src="./images/logo.png" alt="Logo">
+		<img width="55px" height="55px" src="../Project/images/logo.png" alt="Logo">
 	</div>
 
 

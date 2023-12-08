@@ -1,15 +1,18 @@
+
+<?php
+include 'Sup_conn_db.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
     <link href="../images/logo.png" rel="shortcut icon">
-    <title> Business Info</title>
+    <title>Supplier Register</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
-    
-
 
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
@@ -31,17 +34,21 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/stylesBuss.css">
-
-
-
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/stylesBuss.css">
 
 </head>
 
 <style>
     #akt:hover {
         color: #f39c12;
+    }
+
+    .sidebar .navbar .navbar-nav .nav-link:hover,
+    .sidebar .navbar .navbar-nav .nav-link.active {
+        color: #f39c12;
+        /* background: var(--dark); */
+        border-color: #f39c12;
     }
 </style>
 
@@ -59,15 +66,13 @@
         <!-- Sidebar Start -->
         <div class="sidebar pe-4 pb-3">
             <nav class="navbar bg-secondary navbar-dark">
-                <a href="../home.php  " class="navbar-brand mx-4 mb-3">
-                <img src="../images/logo.png" style="width:50px ; height:50px; padding-top:0px" alt="logo">
-                    
+                <a href="../home.php" class="navbar-brand mx-4 mb-3">
+                <img src="../images/logo.png" style="width:45px ; height:45px; padding-top:0px" alt="logo">
                 </a>
                 <div class="d-flex align-items-center ms-4 mb-4">
                     <div class="position-relative">
                         <img class="rounded-circle" src="img/PP.jpg" alt="" style="width: 40px; height: 40px;">
-                        <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1">
-                        </div>
+                        <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
                     </div>
                     <div class="ms-3">
                         <h6 class="mb-0">Akthar Farvees</h6>
@@ -95,7 +100,7 @@
                         <div class="dropdown-menu bg-transparent border-0">
                             <a href="Product_form.php" class="dropdown-item">Add New Products</a>
                             <a href="pro_list.php" class="dropdown-item">Products List</a>
-                                <a href="pro_Display.php" class="dropdown-item">Products List Future</a>s
+                            <a href="pro_Display.php" class="dropdown-item">Products List Future</a>
                             <a href="Search_pro.php" class="dropdown-item">Search Products</a>
                         </div>
                     </div>                    
@@ -132,11 +137,9 @@
         <div class="content">
             <!-- Navbar Start -->
             <nav class="navbar navbar-expand bg-secondary navbar-dark sticky-top px-4 py-0">
-               
                 <a href="#" class="sidebar-toggler flex-shrink-0">
                     <i class="fa fa-bars" style="color:#f39c12"></i>
                 </a>
-               
                 <div class="navbar-nav align-items-center ms-auto">
                     <div class="nav-item dropdown">
 
@@ -180,7 +183,7 @@
                             <span class="d-none d-lg-inline-flex">Akthar Farvees</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
-                            <a href="../dash/m_profile.php" class="dropdown-item">My Profile</a>
+                        <a href="../dash/m_profile.php" class="dropdown-item">My Profile</a>
                             <a href="#" class="dropdown-item">Settings</a>
                             <a href="../logout.php" class="dropdown-item">Log Out</a>
                         </div>
@@ -191,50 +194,48 @@
 
 
             <!-- Blank Start -->
+
             <div class="container-fluid pt-4 px-4">
                 <div class="row vh-auto bg-secondary pb-4 rounded px-3 pt-4 d-flex align-items-center justify-content-center mx-0">
                     
-                        <h3>My Business Info</h3>
-                            <form method="post" action="conn_db.php" class="form">
+                        <h3 class="mb-3">Create Supplier</h3>
+                            <form method="post" action="Sup_conn_db.php" class="form">
                                     <div id="lab">
-                                        <label for="BusinessName">Business Name</label>
-                                        <input id="intborder" type="text" class="form-control" name="BusinessName" placeholder="Business Name">
+                                        <label for="SupName">Supplier Name</label>
+                                        <input id="intborder" type="text" class="form-control" name="SupName" placeholder="Supplier Name">
+                                    </div>
+
+           
+                                    <div id="lab">
+                                        <label for="SupName">Company Name</label>
+                                        <input id="intborder" type="text" class="form-control" name="CompName" placeholder="Company Name">
                                     </div>
                                     <div id="lab">
-                                        <label for="TagLine">Tag Line</label>
-                                        <input id="intborder" type="text" class="form-control" name="TagLine" placeholder="Tag Line">
+                                        <label for="SupAddress">Address</label>
+                                        <input id="intborder" type="text" class="form-control" name="SupAddress" placeholder="Supplier Address">
                                     </div>
-                                   
                                 
                                 <div id="lab">
-                                        <label for="BusinessAddress">Business Address</label>
-                                        <input id="intborder" type="text" class="form-control" name="BusinessAddress" placeholder="Business Address" >
-                                    </div>
-                                <div id="lab">
-                                    <label for="Mobile">Mobile</label>
-                                    <input id="intborder" type="tel" class="form-control" name="Mobile" placeholder="+94 777777777" >
+                                    <label for="SupBalanace">Balanace</label>
+                                    <input id="intborder" type="number" class="form-control" name="SupBalanace" placeholder="0.00" >
                                 </div>
                                 <div id="lab">
-                                    <label for="Email">Email</label>
-                                    <input id="intborder" type="email" class="form-control" name="Email" placeholder="Example254@gmail.com" >
+                                <label for="SupEmail">Email</label>
+                                    <input id="intborder" type="email" class="form-control" name="SupEmail" placeholder="Example254@gmail.com" >
                                 </div>
                                     <div id="lab">
                                         <label for="website">Website</label>
-                                        <input id="intborder" type="url" class="form-control" name="website" placeholder="if you have" >
+                                        <input id="intborder" type="url" class="form-control" name="SupWebsite" placeholder="if you have" >
                                     </div>
-
-                                    <div class="form-check">
-                                        <input id="intborder" class="form-check-input" type="checkbox" id="gridCheck">
-                                        <label class="form-check-label" for="gridCheck">
-                                            Check me out
-                                        </label>
+                                    <div class="lab">
+                                        <label for="website">Mobile</label>
+                                        <input id="intborder" type="tel" class="form-control" name="SupMobile" placeholder="0757575485" >
                                     </div>
-                                <button type="submit" id="intborder" name="submit" class="btn btn-primary" style="margin-top: 25px; background-color: #f39c12;">UPDATE</button>
+                                
+                                <button type="submit" id="intborder" name="create" class="btn btn-primary" style="margin-top: 25px; background-color: #f39c12;">CREATE</button>
                             </form>
-                        
-
-                    </div>
                 </div>
+            </div>
             <!-- Blank End -->
 
 
@@ -276,9 +277,38 @@
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
 
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
+    <?php if (isset($_GET['error'])) {
+    ?>
+    <script>
+        swal({
+            title: "<?php echo $_GET['error'] ?>",
+            text: "You enterd value is incorrect!",
+            icon: "error",
+            button: "Ok!",
 
+        });
+    </script>
+    <?php
+    }
+    ?>
 
+    <?php if (isset($_GET['success'])) {
+    ?>
+    <script>
+        swal({
+            title: "<?php echo $_GET['success'] ?>",
+            text: "Done",
+            icon: "success",
+            button: "Ok ",
+
+        });
+    </script>
+    <?php
+    }
+    ?>
+    
 </body>
 
 </html>

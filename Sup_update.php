@@ -1,15 +1,60 @@
+<?php
+include("./Connection/Sup_Disp_Conn.php");
+
+$id = $_GET['updateid'];
+$sql = "SELECT * FROM `supplier` WHERE SupID=$id";
+$result = mysqli_query($conn, $sql);
+$row = mysqli_fetch_assoc($result);
+$SupID = $row['SupID'];
+$SupName = $row['SupName'];
+$CompName = $row['CompName'];
+$SupAddress = $row['SupAddress'];
+$SupBalanace = $row['SupBalanace'];
+$SupEmail = $row['SupEmail'];
+$SupWebsite = $row['SupWebsite'];
+$SupMobile = $row['SupMobile'];
+
+if (isset($_POST['create'])) {
+    $SupName = $_POST['SupName'];
+    $CompName = $_POST['CompName'];
+    $SupAddress = $_POST['SupAddress'];
+    $SupBalanace = $_POST['SupBalanace'];
+    $SupEmail = $_POST['SupEmail'];
+    $SupWebsite = $_POST['SupWebsite'];
+    $SupMobile = $_POST['SupMobile'];
+
+    // Sanitize input to prevent SQL injection
+    $SupName = mysqli_real_escape_string($conn, $SupName);
+    $CompName = mysqli_real_escape_string($conn, $CompName);
+    $SupAddress = mysqli_real_escape_string($conn, $SupAddress);
+    $SupEmail = mysqli_real_escape_string($conn, $SupEmail);
+    $SupWebsite = mysqli_real_escape_string($conn, $SupWebsite);
+    $SupMobile = mysqli_real_escape_string($conn, $SupMobile);
+
+    $sql = "UPDATE `supplier` SET  SupName='$SupName', CompName='$CompName', SupAddress='$SupAddress', SupBalanace=$SupBalanace, SupEmail='$SupEmail', SupWebsite='$SupWebsite', SupMobile='$SupMobile'
+    WHERE SupID=$id";
+
+    if (mysqli_query($conn, $sql)) {
+        header('Location:Sup_Display.php');
+        exit();
+    } else {
+        die("Error: " . mysqli_error($conn));
+    }
+}
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
     <link href="../images/logo.png" rel="shortcut icon">
-    <title> Business Info</title>
+    <title>Supplier Update</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
-    
-
 
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
@@ -31,17 +76,21 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/stylesBuss.css">
-
-
-
+    <link  rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/stylesBuss.css">
 
 </head>
 
 <style>
     #akt:hover {
         color: #f39c12;
+    }
+
+    .sidebar .navbar .navbar-nav .nav-link:hover,
+    .sidebar .navbar .navbar-nav .nav-link.active {
+        color: #f39c12;
+        /* background: var(--dark); */
+        border-color: #f39c12;
     }
 </style>
 
@@ -59,15 +108,13 @@
         <!-- Sidebar Start -->
         <div class="sidebar pe-4 pb-3">
             <nav class="navbar bg-secondary navbar-dark">
-                <a href="../home.php  " class="navbar-brand mx-4 mb-3">
-                <img src="../images/logo.png" style="width:50px ; height:50px; padding-top:0px" alt="logo">
-                    
+                <a href="../home.php" class="navbar-brand mx-4 mb-3">
+               <img src="../images/logo.png" style="width:50px ; height:45px; padding-top:0px" alt="logo">
                 </a>
                 <div class="d-flex align-items-center ms-4 mb-4">
                     <div class="position-relative">
                         <img class="rounded-circle" src="img/PP.jpg" alt="" style="width: 40px; height: 40px;">
-                        <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1">
-                        </div>
+                        <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
                     </div>
                     <div class="ms-3">
                         <h6 class="mb-0">Akthar Farvees</h6>
@@ -76,6 +123,7 @@
                 </div>
                 <div class="navbar-nav w-100">
                     <a href="../home.php" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+                    <!-- <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-file me-2" aria-hidden="true"></i>New Sales</a>                     -->
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-shopping-cart me-2"></i>Sales</a>
                         <div class="dropdown-menu bg-transparent border-0">
@@ -94,8 +142,7 @@
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-gift me-2"></i>Products</a>
                         <div class="dropdown-menu bg-transparent border-0">
                             <a href="Product_form.php" class="dropdown-item">Add New Products</a>
-                            <a href="pro_list.php" class="dropdown-item">Products List</a>
-                                <a href="pro_Display.php" class="dropdown-item">Products List Future</a>s
+                            <a href="Sup_Display.php" class="dropdown-item">Products List</a>
                             <a href="Search_pro.php" class="dropdown-item">Search Products</a>
                         </div>
                     </div>                    
@@ -136,32 +183,8 @@
                 <a href="#" class="sidebar-toggler flex-shrink-0">
                     <i class="fa fa-bars" style="color:#f39c12"></i>
                 </a>
-               
                 <div class="navbar-nav align-items-center ms-auto">
-                    <div class="nav-item dropdown">
-
-                        <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
-                            <a href="#" class="dropdown-item">
-                                <div class="d-flex align-items-center">
-                                    <img class="rounded-circle" src="img/PP.jpg" alt="" style="width: 40px; height: 40px;">
-                                    //empty
-                                </div>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item">
-                                <div class="d-flex align-items-center">
-                                    <img class="rounded-circle" src="img/PP.jpg" alt="" style="width: 40px; height: 40px;">
-                                    //empty
-                                </div>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item">
-                                <div class="d-flex align-items-center">
-                                    <img class="rounded-circle" src="img/PP.jpg" alt="" style="width: 40px; height: 40px;">
-                                    //empty
-                                </div>
-                        </div>
-                    </div>
+                   
                     <div class="nav-item dropdown">
 
                         <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
@@ -180,7 +203,7 @@
                             <span class="d-none d-lg-inline-flex">Akthar Farvees</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
-                            <a href="../dash/m_profile.php" class="dropdown-item">My Profile</a>
+                        <a href="../dash/m_profile.php" class="dropdown-item">My Profile</a>
                             <a href="#" class="dropdown-item">Settings</a>
                             <a href="../logout.php" class="dropdown-item">Log Out</a>
                         </div>
@@ -194,48 +217,49 @@
             <div class="container-fluid pt-4 px-4">
                 <div class="row vh-auto bg-secondary pb-4 rounded px-3 pt-4 d-flex align-items-center justify-content-center mx-0">
                     
-                        <h3>My Business Info</h3>
-                            <form method="post" action="conn_db.php" class="form">
+                        <h3>Update Supplier</h3>
+                            <form method="post" class="form">
                                     <div id="lab">
-                                        <label for="BusinessName">Business Name</label>
-                                        <input id="intborder" type="text" class="form-control" name="BusinessName" placeholder="Business Name">
+                                        <label for="SupID">ID</label>
+                                        <input id="intborder" disabled style="background-color: #2F2F2F;" value="<?php echo $SupID ?>" type="text" class="form-control" name="SupID" placeholder="ID">
                                     </div>
                                     <div id="lab">
-                                        <label for="TagLine">Tag Line</label>
-                                        <input id="intborder" type="text" class="form-control" name="TagLine" placeholder="Tag Line">
+                                        <label for="SupName">Supplier Name</label>
+                                        <input id="intborder" value="<?php echo $SupName ?>" type="text" class="form-control" name="SupName" placeholder="Supplier Name" >
                                     </div>
-                                   
-                                
-                                <div id="lab">
-                                        <label for="BusinessAddress">Business Address</label>
-                                        <input id="intborder" type="text" class="form-control" name="BusinessAddress" placeholder="Business Address" >
+                                    <div id="lab">
+                                        <label for="CompName">Company Name</label>
+                                        <input id="intborder" type="text" class="form-control" value="<?php echo $CompName ?>" name="CompName" placeholder="Company Name">
                                     </div>
+                                    <div id="lab">
+                                        <label for="SupAddress">Address</label>
+                                        <input id="intborder" value="<?php echo $SupAddress ?>" type="text" class="form-control" name="SupAddress" placeholder="Supplier Address" >
+                                    </div>
+
                                 <div id="lab">
-                                    <label for="Mobile">Mobile</label>
-                                    <input id="intborder" type="tel" class="form-control" name="Mobile" placeholder="+94 777777777" >
+                                    <label for="SupBalanace">Balnace</label>
+                                    <input id="intborder" value="<?php echo $SupBalanace ?>" step="0.01" type="number" class="form-control" name="SupBalanace" placeholder="0.00">
                                 </div>
+                               
                                 <div id="lab">
-                                    <label for="Email">Email</label>
-                                    <input id="intborder" type="email" class="form-control" name="Email" placeholder="Example254@gmail.com" >
+                                <label for="SupEmail">Email</label>
+                                    <input id="intborder" value="<?php echo $SupEmail ?>" type="email" class="form-control" name="SupEmail" placeholder="Example254@gmail.com">
                                 </div>
                                     <div id="lab">
                                         <label for="website">Website</label>
-                                        <input id="intborder" type="url" class="form-control" name="website" placeholder="if you have" >
+                                        <input id="intborder" value="<?php echo $SupWebsite ?>" type="url" class="form-control" name="SupWebsite" placeholder="if you have">
                                     </div>
-
-                                    <div class="form-check">
-                                        <input id="intborder" class="form-check-input" type="checkbox" id="gridCheck">
-                                        <label class="form-check-label" for="gridCheck">
-                                            Check me out
-                                        </label>
-                                    </div>
-                                <button type="submit" id="intborder" name="submit" class="btn btn-primary" style="margin-top: 25px; background-color: #f39c12;">UPDATE</button>
+                                    <div id="lab">
+                                        <label for="mobile">Mobile</label>
+                                        <input id="intborder" value="<?php echo $SupMobile ?>" type="tel" class="form-control" name="SupMobile" placeholder="0757575485">
+                                </div>
+                                <button type="submit" id="intborder" name="create" class="btn btn-primary" style="margin-bottom:40px; background-color: #f39c12;">UPDATE</button>
                             </form>
-                        
-
-                    </div>
+                        </div>
                 </div>
-            <!-- Blank End -->
+         
+           <!-- Blank End -->
+
 
 
             <!-- Footer Start -->
@@ -247,14 +271,19 @@
                         </div>
                         <div class="col-12 col-sm-6 text-center text-sm-end">
                             <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                            Designed By <a href="#" style="color:#f39c12">Brainiacs' Team</a>
-                            <br>Distributed By: <a href="#" target="_blank" style="color:#f39c12">OUSL</a>
+                            Designed By <a href="https://htmlcodex.com" style="color:#f39c12">Brainiacs' Team</a>
+                            <br>Distributed By: <a href="https://themewagon.com" target="_blank" style="color:#f39c12">OUSL</a>
                         </div>
                     </div>
                 </div>
             </div>
             <!-- Footer End -->
-        </div>
+
+            
+            
+</div>
+
+
         <!-- Content End -->
 
 
@@ -275,10 +304,6 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
-
-
-
-
 </body>
 
 </html>
