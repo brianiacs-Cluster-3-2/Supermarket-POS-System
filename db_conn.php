@@ -3,9 +3,10 @@
     $host = "localhost";
     $user = "root";
     $pass =  "";
-    $db = "brainiacs pos";
+    $database = "brainiacs pos";
+    $port = 3308
 
-    $conn =  mysqli_connect($host, $user,$pass, $db,3308);
+    $conn =  mysqli_connect($host, $user,$pass, $database,$port);
 
     if (!$conn) {
        echo "Connection fail";
