@@ -8,6 +8,7 @@ $db = "brainiacs pos";
 
 $conn =  mysqli_connect($host, $user, $pass, $db, 3308);
 
+//check the code wether the if condition is working or not
 if (!$conn) {
     echo "Connectin fail";
 }
