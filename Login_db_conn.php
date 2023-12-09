@@ -1,7 +1,7 @@
 <?php
 session_start();
 include "db_conn.php";
-if(isset($_POST['username']) && isset($_POST['username']) && isset($_POST['role'])){
+if(isset($_POST['username']) && isset($_POST['password']) && isset($_POST['role'])){
     function validate($data)
     {
         $data = trim($data);
