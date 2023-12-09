@@ -1,4 +1,5 @@
 <?php
+// connect customer database
 
 include ("./Connection/Sup_Disp_Conn.php");
 
