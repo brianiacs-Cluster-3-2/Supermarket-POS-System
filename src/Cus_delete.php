@@ -3,7 +3,7 @@ ob_start();
 include 'Cus_Display.php';
 include ('./Connection/Sup_Disp_Conn.php');
 
-
+//check wether the "deleteid" was submited ot not
 if (isset($_GET['deleteid'])) {
     $id = $_GET['deleteid'];
     $sql = "DELETE FROM `customer` WHERE CusID = $id";
