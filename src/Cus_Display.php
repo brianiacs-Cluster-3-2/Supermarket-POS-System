@@ -299,7 +299,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
                 <!-- Blank End -->
 
 
-                <!-- Footer Start -->
+                <!-- update footer start-->
                 <div class="container-fluid pt-4 px-4">
                     <div class="bg-secondary rounded-top p-4">
                         <div class="row">
