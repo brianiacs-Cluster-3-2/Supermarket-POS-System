@@ -63,10 +63,7 @@
 				</select>
 			</div>
 
-			<div class="remember-me">
-				<input type="checkbox" id="customControlInline">
-				<label for="customControlInline">Remember me</label>
-			</div>
+			
 
 			<div>
 				<button type="submit" class="login-btn" name="button">Login</button>
