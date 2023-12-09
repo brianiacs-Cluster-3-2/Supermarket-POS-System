@@ -81,6 +81,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
 
     <body>
 
+<!--         Admin dashborad start point -->
         <?php
         if ($_SESSION['role'] == 'Admin') { ?>
 
