@@ -38,6 +38,7 @@
 			<h2 style="color:white">Login</h2>
 		</div>
 
+<!-- Login form start -->
 		<form method="post" action="Login_db_conn.php">
 			<?php if (isset($_GET['error'])) { ?>
 				<p class="alert alert-danger" style="padding:3px; padding-left:6px">
